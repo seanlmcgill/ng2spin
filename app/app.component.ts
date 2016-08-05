@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+
+import { SpinnerComponent } from './spinner';
+
 @Component({
     selector: 'ng2spin-demo-app',
-    template: '<div>Angular2 + Spin.js Demo App</div>'
+    templateUrl: 'app/app.component.html'
 })
 export class AppComponent {
 
