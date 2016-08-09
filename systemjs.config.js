@@ -4,13 +4,15 @@
         'app':                        'app', // 'dist',
         '@angular':                   'node_modules/@angular',
         'rxjs':                       'node_modules/rxjs',
-        'symbol-observable':          'node_modules/symbol-observable'
+        'symbol-observable':          'node_modules/symbol-observable',
+        'spinnerjs':                    'node_modules/spin.js/'
     };
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
         'app':                        { main: 'main.js',  defaultExtension: 'js' },
         'rxjs':                       { defaultExtension: 'js' },
-        'symbol-observable':          { defaultExtension: 'js', main: 'index.js' }
+        'symbol-observable':          { defaultExtension: 'js', main: 'index.js' },
+        'spinner':                    { defaultExtension: 'js', main: 'spin.min.js' }
     };
     var ngPackageNames = [
         'common',

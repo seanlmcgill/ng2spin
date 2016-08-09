@@ -9,15 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var spinner_1 = require('./spinner');
+var spinner_service_1 = require("./spinner/spinner.service");
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(spinnerService) {
+        this.spinnerService = spinnerService;
     }
+    AppComponent.prototype.spin = function (event) {
+        var _this = this;
+        event.preventDefault();
+        this.spinnerService.show();
+        setTimeout(function () {
+            _this.spinnerService.hide();
+        }, 3000);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'ng2spin-demo-app',
-            templateUrl: 'app/app.component.html'
+            templateUrl: 'app/app.component.html',
+            encapsulation: core_1.ViewEncapsulation.None,
+            directives: [spinner_1.SpinnerComponent]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [spinner_service_1.SpinnerService])
     ], AppComponent);
     return AppComponent;
 }());

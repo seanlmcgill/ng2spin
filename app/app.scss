@@ -1,4 +1,5 @@
-@import './reset';
+//$icon-font-path: "fonts/bootstrap/";
+@import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap';
 @import './spinner/spinner';
 
 .app {
@@ -7,10 +8,16 @@
   width: 100%;
   height: 100vh;
   padding: 8px;
+  h1 {
+    text-align: center;
+  }
+  .test-it-section {
+    text-align: center;
+    button {
+      position: absolute;
+      top: 25%;
+      font-size: 2.0em;
+    }
+  }
 }
 
-h1 {
-  font-size: 2.0em;
-  width: 100%;
-  text-align: center;
-}
