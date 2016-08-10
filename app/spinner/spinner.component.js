@@ -44,7 +44,7 @@ var SpinnerComponent = (function () {
     }
     SpinnerComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log('spinner.component - ngOnInit called');
+        this.spinner = new Spinner(this.options);
         this.subscription = this.spinnerService.running.subscribe(function (show) {
             if (show) {
                 _this.startSpinner();
@@ -59,13 +59,11 @@ var SpinnerComponent = (function () {
     };
     SpinnerComponent.prototype.startSpinner = function () {
         this.show = true;
-        SpinnerComponent.spinner = new Spinner(this.options).spin(this.element.firstChild);
+        this.spinner.spin(this.element.firstChild);
     };
     SpinnerComponent.prototype.stopSpinner = function () {
-        if (SpinnerComponent.spinner) {
-            this.show = false;
-            SpinnerComponent.spinner.stop();
-        }
+        this.show = false;
+        this.spinner.stop();
     };
     SpinnerComponent = __decorate([
         core_1.Component({

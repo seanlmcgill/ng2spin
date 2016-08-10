@@ -9,8 +9,7 @@ declare var Spinner: any;
 })
 export class SpinnerComponent implements OnInit, OnDestroy {
 
-    static spinner: any;
-
+    private spinner: any;
     private show: boolean = false;
     private element: any = null;
     private options: any = null;
@@ -44,7 +43,7 @@ export class SpinnerComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        console.log('spinner.component - ngOnInit called');
+        this.spinner = new Spinner(this.options);
         this.subscription = this.spinnerService.running.subscribe( show => {
             if (show) {
                 this.startSpinner();
@@ -60,13 +59,11 @@ export class SpinnerComponent implements OnInit, OnDestroy {
 
     startSpinner() {
         this.show = true;
-        SpinnerComponent.spinner = new Spinner(this.options).spin(this.element.firstChild);
+        this.spinner.spin(this.element.firstChild);
     }
 
     stopSpinner() {
-        if (SpinnerComponent.spinner) {
-            this.show = false;
-            SpinnerComponent.spinner.stop();
-        }
+        this.show = false;
+        this.spinner.stop();
     }
 }
