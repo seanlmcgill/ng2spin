@@ -28,7 +28,7 @@ var SpinnerComponent = (function () {
             radius: 50,
             scale: 0.75,
             corners: 1,
-            color: '#000',
+            color: '#fff',
             opacity: 0.25,
             rotate: 0,
             direction: 1,

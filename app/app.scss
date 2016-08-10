@@ -11,13 +11,20 @@
   h1 {
     text-align: center;
   }
-  .test-it-section {
-    text-align: center;
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    input {
+      margin-left: 10px;
+      width: 100px;
+    }
+    label {
+      margin-left: 5px;
+    }
     button {
-      position: absolute;
-      top: 25%;
-      font-size: 2.0em;
     }
   }
 }
-

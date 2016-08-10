@@ -28,7 +28,7 @@ export class SpinnerComponent implements OnInit, OnDestroy {
             radius: 50, // The radius of the inner circle
             scale: 0.75, // Scales overall size of the spinner
             corners: 1, // Corner roundness (0..1)
-            color: '#000', // #rgb or #rrggbb or array of colors
+            color: '#fff', // #rgb or #rrggbb or array of colors
             opacity: 0.25, // Opacity of the lines
             rotate: 0, // The rotation offset
             direction: 1, // 1: clockwise, -1: counterclockwise

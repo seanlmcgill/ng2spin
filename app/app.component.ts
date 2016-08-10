@@ -11,14 +11,18 @@ import { SpinnerService } from './spinner/spinner.service';
 })
 export class AppComponent {
 
+    private spinTimeout: number = 1;
+
     constructor(private spinnerService: SpinnerService) {
     }
 
     public spin(event: MouseEvent): void {
+        let timeoutMs = this.spinTimeout * 1000;
+        console.log(`Showing spinner for ${timeoutMs} milliseconds`);
         event.preventDefault();
         this.spinnerService.show();
         setTimeout(() => {
             this.spinnerService.hide();
-        }, 3000);
+        }, timeoutMs);
     }
 }

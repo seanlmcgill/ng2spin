@@ -1,7 +1,9 @@
 <div class="app">
     <h1>Angular2 + Spin.js Demo App</h1>
     <ng2-spinner></ng2-spinner>
-    <div class="test-it-section">
-        <button class="btn btn-primary" (click)="spin($event)">Try out the spinner</button>
+    <div class="container input-group">
+        <button class="btn btn-primary" (click)="spin($event)">Spin for</button>
+        <input id="spinTimeout" name="spinTimeout" type="number" min="1" max="10" class="form-control" [(ngModel)]="spinTimeout" />
+        <label for="spinTimeout">seconds</label>
     </div>
 </div>

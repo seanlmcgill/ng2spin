@@ -14,14 +14,17 @@ var spinner_service_1 = require('./spinner/spinner.service');
 var AppComponent = (function () {
     function AppComponent(spinnerService) {
         this.spinnerService = spinnerService;
+        this.spinTimeout = 1;
     }
     AppComponent.prototype.spin = function (event) {
         var _this = this;
+        var timeoutMs = this.spinTimeout * 1000;
+        console.log("Showing spinner for " + timeoutMs + " milliseconds");
         event.preventDefault();
         this.spinnerService.show();
         setTimeout(function () {
             _this.spinnerService.hide();
-        }, 3000);
+        }, timeoutMs);
     };
     AppComponent = __decorate([
         core_1.Component({
