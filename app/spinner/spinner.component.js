@@ -10,8 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var spinner_service_1 = require('./spinner.service');
-require('spinnerjs');
-//declare var spinner: any;
 var SpinnerComponent = (function () {
     function SpinnerComponent(spinnerElement, spinnerService) {
         this.spinnerElement = spinnerElement;
@@ -20,6 +18,8 @@ var SpinnerComponent = (function () {
         this.element = null;
         this.options = null;
         this.subscription = null;
+        console.log('Spinner component created');
+        console.log(spinner);
         this.element = spinnerElement.nativeElement;
         this.options = {
             lines: 13,
@@ -46,6 +46,7 @@ var SpinnerComponent = (function () {
     }
     SpinnerComponent.prototype.ngOnInit = function () {
         var _this = this;
+        console.log('spinner.component - ngOnInit called');
         this.subscription = this.spinnerService.running.subscribe(function (show) {
             if (show) {
                 _this.startSpinner();
@@ -70,8 +71,8 @@ var SpinnerComponent = (function () {
     };
     SpinnerComponent = __decorate([
         core_1.Component({
-            selector: 'spinner',
-            templateUrl: './spinner.component.html'
+            selector: 'ng2-spinner',
+            templateUrl: './app/spinner/spinner.component.html'
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, spinner_service_1.SpinnerService])
     ], SpinnerComponent);

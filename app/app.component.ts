@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
-import { SpinnerComponent } from './spinner';
-import {SpinnerService} from "./spinner/spinner.service";
+import { SpinnerComponent } from './spinner/spinner.component';
+import { SpinnerService } from './spinner/spinner.service';
 
 @Component({
     selector: 'ng2spin-demo-app',

@@ -9,5 +9,9 @@
     "removeComments": false,
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "typings/index.d.ts"
+  ]
 }

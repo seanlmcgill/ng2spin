@@ -9,8 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var spinner_1 = require('./spinner');
-var spinner_service_1 = require("./spinner/spinner.service");
+var spinner_component_1 = require('./spinner/spinner.component');
+var spinner_service_1 = require('./spinner/spinner.service');
 var AppComponent = (function () {
     function AppComponent(spinnerService) {
         this.spinnerService = spinnerService;
@@ -28,7 +28,7 @@ var AppComponent = (function () {
             selector: 'ng2spin-demo-app',
             templateUrl: 'app/app.component.html',
             encapsulation: core_1.ViewEncapsulation.None,
-            directives: [spinner_1.SpinnerComponent]
+            directives: [spinner_component_1.SpinnerComponent]
         }), 
         __metadata('design:paramtypes', [spinner_service_1.SpinnerService])
     ], AppComponent);
