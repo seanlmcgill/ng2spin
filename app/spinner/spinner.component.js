@@ -19,7 +19,7 @@ var SpinnerComponent = (function () {
         this.options = null;
         this.subscription = null;
         console.log('Spinner component created');
-        console.log(spinner);
+        console.log(Spinner);
         this.element = spinnerElement.nativeElement;
         this.options = {
             lines: 13,
@@ -61,7 +61,7 @@ var SpinnerComponent = (function () {
     };
     SpinnerComponent.prototype.startSpinner = function () {
         this.show = true;
-        SpinnerComponent.spinner = new spinner(this.options).spin(this.element.firstChild);
+        SpinnerComponent.spinner = new Spinner(this.options).spin(this.element.firstChild);
     };
     SpinnerComponent.prototype.stopSpinner = function () {
         if (SpinnerComponent.spinner) {

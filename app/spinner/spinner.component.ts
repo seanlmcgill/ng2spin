@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, OnDestroy } from '@angular/core';
 import { SpinnerService } from './spinner.service';
 
-declare var spinner: any = new Spinner();
+declare var Spinner: any;
 
 @Component({
    selector: 'ng2-spinner',
@@ -19,7 +19,7 @@ export class SpinnerComponent implements OnInit, OnDestroy {
     constructor(private spinnerElement: ElementRef,
                 private spinnerService: SpinnerService) {
         console.log('Spinner component created');
-        console.log(spinner);
+        console.log(Spinner);
         this.element = spinnerElement.nativeElement;
         this.options = {
             lines: 13, // The number of lines to draw
@@ -62,7 +62,7 @@ export class SpinnerComponent implements OnInit, OnDestroy {
 
     startSpinner() {
         this.show = true;
-        SpinnerComponent.spinner = new spinner(this.options).spin(this.element.firstChild);
+        SpinnerComponent.spinner = new Spinner(this.options).spin(this.element.firstChild);
     }
 
     stopSpinner() {
