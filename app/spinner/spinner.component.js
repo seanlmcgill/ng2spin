@@ -18,8 +18,6 @@ var SpinnerComponent = (function () {
         this.element = null;
         this.options = null;
         this.subscription = null;
-        console.log('Spinner component created');
-        console.log(Spinner);
         this.element = spinnerElement.nativeElement;
         this.options = {
             lines: 13,

@@ -18,8 +18,6 @@ export class SpinnerComponent implements OnInit, OnDestroy {
 
     constructor(private spinnerElement: ElementRef,
                 private spinnerService: SpinnerService) {
-        console.log('Spinner component created');
-        console.log(Spinner);
         this.element = spinnerElement.nativeElement;
         this.options = {
             lines: 13, // The number of lines to draw
