@@ -187,7 +187,7 @@ var SpinnerComponent = (function () {
     ], SpinnerComponent.prototype, "position", void 0);
     SpinnerComponent = __decorate([
         core_1.Component({
-            selector: 'ng2-spinner',
+            selector: 'sjs-spinner',
             templateUrl: './app/spinner/spinner.component.html'
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, spinner_service_1.SpinnerService])
@@ -195,4 +195,3 @@ var SpinnerComponent = (function () {
     return SpinnerComponent;
 }());
 exports.SpinnerComponent = SpinnerComponent;
-//# sourceMappingURL=spinner.component.js.map

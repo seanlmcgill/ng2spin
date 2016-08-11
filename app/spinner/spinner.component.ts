@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs/Rx';
 declare var Spinner: any;
 
 @Component({
-   selector: 'ng2-spinner',
+   selector: 'sjs-spinner',
    templateUrl: './app/spinner/spinner.component.html'
 })
 export class SpinnerComponent implements OnInit, OnDestroy {

@@ -34,4 +34,3 @@ var SpinnerService = (function () {
     return SpinnerService;
 }());
 exports.SpinnerService = SpinnerService;
-//# sourceMappingURL=spinner.service.js.map

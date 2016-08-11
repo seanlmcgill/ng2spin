@@ -9,4 +9,3 @@ core_1.enableProdMode();
 platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent, [
     spinner_service_1.SpinnerService
 ]);
-//# sourceMappingURL=main.js.map
