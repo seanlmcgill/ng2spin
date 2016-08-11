@@ -4,11 +4,11 @@ import { Observer } from 'rxjs/Observer';
 
 @Injectable()
 export class SpinnerService {
-    running: Observable<boolean>;
     private spinnerObserver: Observer<boolean>;
+    public spinnerObservable: Observable<boolean>;
 
     constructor() {
-        this.running = new Observable<boolean>(observer => {
+        this.spinnerObservable = new Observable<boolean>(observer => {
                 this.spinnerObserver = observer;
             }
         ).share();

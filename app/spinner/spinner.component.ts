@@ -74,7 +74,7 @@ export class SpinnerComponent implements OnInit, OnDestroy {
     }
 
     private createServiceSubscription() {
-        this.subscription = this.spinnerService.running.subscribe(show => {
+        this.subscription = this.spinnerService.spinnerObservable.subscribe(show => {
             if (show) {
                 this.startSpinner();
             } else {

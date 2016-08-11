@@ -13,7 +13,7 @@ var Observable_1 = require('rxjs/Observable');
 var SpinnerService = (function () {
     function SpinnerService() {
         var _this = this;
-        this.running = new Observable_1.Observable(function (observer) {
+        this.spinnerObservable = new Observable_1.Observable(function (observer) {
             _this.spinnerObserver = observer;
         }).share();
     }

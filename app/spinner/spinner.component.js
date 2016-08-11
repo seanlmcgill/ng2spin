@@ -71,7 +71,7 @@ var SpinnerComponent = (function () {
     };
     SpinnerComponent.prototype.createServiceSubscription = function () {
         var _this = this;
-        this.subscription = this.spinnerService.running.subscribe(function (show) {
+        this.subscription = this.spinnerService.spinnerObservable.subscribe(function (show) {
             if (show) {
                 _this.startSpinner();
             }
