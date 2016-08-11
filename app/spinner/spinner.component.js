@@ -16,35 +16,61 @@ var SpinnerComponent = (function () {
         this.spinnerService = spinnerService;
         this.show = false;
         this.element = null;
-        this.options = null;
         this.subscription = null;
+        this.lines = 12; // The number of lines to draw
+        this.length = 20; // The length of each line
+        this.width = 12; // The line thickness
+        this.radius = 50; // The radius of the inner circle
+        this.scale = 1.0; // Scales overall size of the spinner
+        this.corners = 1; // Corner roundness (0..1)
+        this.color = '#fff'; // #rgb or #rrggbb or array of colors
+        this.opacity = 0.25; // Opacity of the lines
+        this.rotate = 0; // The rotation offset
+        this.direction = 1; // 1: clockwise, -1: counterclockwise
+        this.speed = 0.8; // Rounds per second
+        this.trail = 60; // Afterglow percentage
+        this.fps = 20; // Frames per second when using setTimeout() as a fallback for CSS
+        this.className = 'spinner'; // The CSS class to assign to the spinner
+        this.top = '50%'; // Top position relative to parent
+        this.left = '50%'; // Left position relative to parent
+        this.shadow = true; // Whether to render a shadow
+        this.hwaccel = true; // Whether to use hardware acceleration
+        this.position = 'absolute'; // Element positioning
         this.element = spinnerElement.nativeElement;
-        this.options = {
-            lines: 13,
-            length: 21,
-            width: 13,
-            radius: 50,
-            scale: 0.75,
-            corners: 1,
-            color: '#fff',
-            opacity: 0.25,
-            rotate: 0,
-            direction: 1,
-            speed: 0.8,
-            trail: 60,
-            fps: 20,
-            zIndex: 2e9,
-            className: 'spinner',
-            top: '50%',
-            left: '50%',
-            shadow: true,
-            hwaccel: false,
-            position: 'absolute' // Element positioning
-        };
     }
     SpinnerComponent.prototype.ngOnInit = function () {
+        this.initSpinner();
+        this.createServiceSubscription();
+    };
+    SpinnerComponent.prototype.initSpinner = function () {
+        var options = {
+            lines: this.lines,
+            length: this.length,
+            width: this.width,
+            radius: this.radius,
+            scale: this.scale,
+            corners: this.corners,
+            color: this.color,
+            opacity: this.opacity,
+            rotate: this.rotate,
+            direction: this.direction,
+            speed: this.speed,
+            trail: this.trail,
+            fps: this.fps,
+            zIndex: 2e9,
+            className: this.className,
+            top: this.top,
+            left: this.left,
+            shadow: this.shadow,
+            hwaccel: this.hwaccel,
+            position: this.position
+        };
+        console.log('Creating spinner with options:');
+        console.log(JSON.stringify((options)));
+        this.spinner = new Spinner(options);
+    };
+    SpinnerComponent.prototype.createServiceSubscription = function () {
         var _this = this;
-        this.spinner = new Spinner(this.options);
         this.subscription = this.spinnerService.running.subscribe(function (show) {
             if (show) {
                 _this.startSpinner();
@@ -65,6 +91,100 @@ var SpinnerComponent = (function () {
         this.show = false;
         this.spinner.stop();
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], SpinnerComponent.prototype, "lines", void 0);
+    __decorate([
+        // The number of lines to draw
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], SpinnerComponent.prototype, "length", void 0);
+    __decorate([
+        // The length of each line
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], SpinnerComponent.prototype, "width", void 0);
+    __decorate([
+        // The line thickness
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], SpinnerComponent.prototype, "radius", void 0);
+    __decorate([
+        // The radius of the inner circle
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], SpinnerComponent.prototype, "scale", void 0);
+    __decorate([
+        // Scales overall size of the spinner
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], SpinnerComponent.prototype, "corners", void 0);
+    __decorate([
+        // Corner roundness (0..1)
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], SpinnerComponent.prototype, "color", void 0);
+    __decorate([
+        // #rgb or #rrggbb or array of colors
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], SpinnerComponent.prototype, "opacity", void 0);
+    __decorate([
+        // Opacity of the lines
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], SpinnerComponent.prototype, "rotate", void 0);
+    __decorate([
+        // The rotation offset
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], SpinnerComponent.prototype, "direction", void 0);
+    __decorate([
+        // 1: clockwise, -1: counterclockwise
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], SpinnerComponent.prototype, "speed", void 0);
+    __decorate([
+        // Rounds per second
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], SpinnerComponent.prototype, "trail", void 0);
+    __decorate([
+        // Afterglow percentage
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], SpinnerComponent.prototype, "fps", void 0);
+    __decorate([
+        // Frames per second when using setTimeout() as a fallback for CSS
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], SpinnerComponent.prototype, "className", void 0);
+    __decorate([
+        // The CSS class to assign to the spinner
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], SpinnerComponent.prototype, "top", void 0);
+    __decorate([
+        // Top position relative to parent
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], SpinnerComponent.prototype, "left", void 0);
+    __decorate([
+        // Left position relative to parent
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], SpinnerComponent.prototype, "shadow", void 0);
+    __decorate([
+        // Whether to render a shadow
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], SpinnerComponent.prototype, "hwaccel", void 0);
+    __decorate([
+        // Whether to use hardware acceleration
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], SpinnerComponent.prototype, "position", void 0);
     SpinnerComponent = __decorate([
         core_1.Component({
             selector: 'ng2-spinner',
