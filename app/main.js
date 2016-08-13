@@ -3,9 +3,8 @@
 var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
 var core_1 = require('@angular/core');
 require('./rxjs-operators');
-var app_component_1 = require('./app.component');
-var spinner_service_1 = require('./spinner/spinner.service');
 core_1.enableProdMode();
-platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent, [
-    spinner_service_1.SpinnerService
-]);
+// The app module
+var app_module_1 = require('./app.module');
+// Compile and launch the module
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);

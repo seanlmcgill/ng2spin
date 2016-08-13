@@ -1,9 +1,9 @@
 # Angular2 + Spinner.js
 
-I'm currently working on a project using Angular2 and as with many applications I needed a loading indicator.  After doing a bit of searching I decided to use Spin.js, a really cool JavaScript library that can be used to render a 'spinner' without using external images/css.  I then started thinking, how do I do this with Angular2... do I need a component that I put in ever page, is there a way to share a single root level component with my app, etc.  I then came across a really good blog by Tom Buyse explaining how to setup an observable subscription in order to control a single component using a service that you pass around your application (Thanks Tom!).  I think this can be a really useful pattern of development for a number of purposes, but here's a look at how I created an Angular2 spinner component with Spin.js.
+I'm currently working on a project using Angular2 and as with many applications I needed a loading indicator.  After doing a bit of searching I decided to use Spin.js, a really cool JavaScript library that can be used to render a 'spinner' without using external images/css.  I then started thinking, how do I do this with Angular2... do I need a component that I put in every page, is there a way to share a single root level component with my app, etc.  I then came across a really good blog by Tom Buyse explaining how to setup an observable subscription in order to control a single component using a service that you pass around your application (Thanks Tom!).  I think this can be a really useful pattern of development for a number of purposes, but here's a look at how I created an Angular2 spinner component with Spin.js.
     
 ### The spinner component
-First of all,I created the component that I'll put an instance of in my root application view.
+First of all I created the component that I'll put an instance of in my root application view.
 
 ```
 @Component({
@@ -65,7 +65,7 @@ private initSpinner() {
 
 ```
 
-Now we've got an instance of the spin.js object created than we can show and hide as needed. Next comes the magic, we create a service that holds a shared observable in order to control the spinner component from other components within the application.  Note, it's important to import the Rxjs 'share' operator in order to create the shared observable, I did so in a file called rxjs-operators.ts that I've imported into my main application component.
+Now we've got an instance of the spin.js object created than we can show and hide as needed. Next comes the magic, we create a service that holds a shared observable in order to control the spinner component from other components within the application.  Note: it's important to import the Rxjs 'share' operator in order to create the shared observable, I did so in a file called rxjs-operators.ts that I've imported into my main application component.
 
 ```
 @Injectable()
@@ -96,7 +96,7 @@ private createServiceSubscription() {
     }
 ```
 
-Now the service can use the observable in order to trigger the show and hide states in the component.
+The service can use the observable in order to trigger the show and hide states in the component.
 
 ```
 show() {
