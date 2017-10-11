@@ -9,8 +9,8 @@ First of all I created the component that I'll put an instance of in my root app
 
 ```
 @Component({
-   selector: 'ng2-spinner',
-   templateUrl: './app/spinner/spinner.component.html'
+   selector: 'sjs-spinner',
+   templateUrl: './spinner.component.html'
 })
 export class SpinnerComponent implements OnInit, OnDestroy {
 .
