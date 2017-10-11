@@ -1,0 +1,9 @@
+<div class="app">
+  <h1>Angular 4 + Spin.js Demo</h1>
+  <sjs-spinner [radius]="25" [lines]="15" [width]="8" [length]="15" [opacity]="0.1" [shadow]="true"></sjs-spinner>
+  <div class="container input-group">
+      <button class="btn btn-primary" (click)="spin($event)">Spin for</button>
+      <input id="spinTimeout" name="spinTimeout" type="number" min="1" max="10" class="form-control" [(ngModel)]="spinTimeout" />
+      <label for="spinTimeout">seconds</label>
+  </div>
+</div>

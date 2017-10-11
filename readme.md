@@ -1,6 +1,8 @@
-# Angular2 + Spinner.js
+# Angular 4 + Spinner.js
 
-I'm currently working on a project using Angular2 and as with many applications I needed a loading indicator.  After doing a bit of searching I decided to use Spin.js, a really cool JavaScript library that can be used to render a 'spinner' without using external images/css.  I then started thinking, how do I do this with Angular2... do I need a component that I put in every page, is there a way to share a single root level component with my app, etc.  I then came across a really good blog by Tom Buyse explaining how to setup an observable subscription in order to control a single component using a service that you pass around your application (Thanks Tom!).  I think this can be a really useful pattern of development for a number of purposes, but here's a look at how I created an Angular2 spinner component with Spin.js.
+Not long ago I was working on a project using Angular 4 and as with many applications I needed a loading indicator.  After doing a bit of searching I decided to use Spin.js, a really cool JavaScript library that can be used to render a 'spinner' without using external images/css.  I then started thinking, how do I do this with Angular 4... do I need a component that I put in every page, is there a way to share a single root level component with my app, etc.  I then came across a really good blog by Tom Buyse explaining how to setup an observable subscription in order to control a single component using a service that you pass around your application (Thanks Tom!).  I think this can be a really useful pattern of development for a number of purposes, but here's a look at how I created an Angular2 spinner component with Spin.js.
+
+(Note: I eventually found better aesthetics using @angular/material's progress indicator and abandoned this, but it was still a good learning effort)
     
 ### The spinner component
 First of all I created the component that I'll put an instance of in my root application view.

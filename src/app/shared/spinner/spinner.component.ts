@@ -6,7 +6,7 @@ declare var Spinner: any;
 
 @Component({
    selector: 'sjs-spinner',
-   templateUrl: './app/spinner/spinner.component.html'
+   templateUrl: './spinner.component.html'
 })
 export class SpinnerComponent implements OnInit, OnDestroy {
 
