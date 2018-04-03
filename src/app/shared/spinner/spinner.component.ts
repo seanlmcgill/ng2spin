@@ -1,8 +1,7 @@
 import { Component, ElementRef, OnInit, OnDestroy, Input } from '@angular/core';
 import { SpinnerService } from './spinner.service';
-import { Subscription } from 'rxjs/Rx';
-
-declare var Spinner: any;
+import { Subscription } from 'rxjs/Subscription';
+import { Spinner } from 'spin.js';
 
 @Component({
    selector: 'sjs-spinner',
