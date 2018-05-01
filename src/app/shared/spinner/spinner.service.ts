@@ -1,28 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Observer';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class SpinnerService {
-    private spinnerObserver: Observer<boolean>;
-    public spinnerObservable: Observable<boolean>;
+    private spinnerSubject = new BehaviorSubject<boolean>(false);
 
-    constructor() {
-        this.spinnerObservable = new Observable<boolean>(observer => {
-                this.spinnerObserver = observer;
-            }
-        ).share();
+    constructor() {}
+
+    get spinnerObservable() {
+      return this.spinnerSubject.asObservable();
     }
 
     show() {
-        if (this.spinnerObserver) {
-            this.spinnerObserver.next(true);
-        }
+        this.spinnerSubject.next(true);
     }
 
     hide() {
-        if (this.spinnerObserver) {
-            this.spinnerObserver.next(false);
-        }
+        this.spinnerSubject.next(false);
     }
 }
